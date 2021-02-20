@@ -71,7 +71,7 @@ app.get('/:id', (req,res) => {
 
 */
 
-
+// ESTA PARTE DEL CÓDIGO ES PARA LA RAMA DE RANDOM 
 app.get('/random', (req,res,next) => {
 
 	const ran = random.int(min=1,max=898);
