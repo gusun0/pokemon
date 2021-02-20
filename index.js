@@ -17,60 +17,6 @@ const P = new Pokedex();
 app.use(bodyParser.urlencoded({ extended: false })); // recuperar los datos del formulario html
 app.use(bodyParser.json());
 
-/*
-app.get('/:nombre', (req,res) => {
-
-	let nombre = req.params.nombre;
-	console.loog
-
-	P.getPokemonByName(nombre) // with Promise
-		.then(function(response) {
-
-			const obj = {
-				name: response.name,
-				id: response.id,
-				moves: response.moves[0].move.name,
-				stats_back: response.sprites.back_default,
-				stats_front: response.sprites.front_default
-
-			}
-
-			res.send(obj);
-		})
-		.catch(function(error) {
-			console.log('There was an ERROR: ', error);
-		});
-
-
-});
-
-
-app.get('/:id', (req,res) => {
-
-	let id = req.params.id;
-
-	P.getPokemonByName(id) // with Promise
-		.then(function(response) {
-
-			const obj = {
-				name: response.name,
-				id: response.id,
-				moves: response.moves[0].move.name,
-				stats_back: response.sprites.back_default,
-				stats_front: response.sprites.front_default
-			}
-
-			res.send(obj);
-		})
-		.catch(function(error) {
-			console.log('There was an ERROR: ', error);
-		});
-
-
-});
-
-*/
-
 
 app.get('/random', (req,res,next) => {
 
@@ -138,6 +84,63 @@ app.post('/lista', (req,res) => {
 
 
 });
+
+
+
+
+app.get('/:nombre', (req,res) => {
+
+	let nombre = req.params.nombre;
+	console.loog
+
+	P.getPokemonByName(nombre) // with Promise
+		.then(function(response) {
+
+			const obj = {
+				name: response.name,
+				id: response.id,
+				moves: response.moves[0].move.name,
+				stats_back: response.sprites.back_default,
+				stats_front: response.sprites.front_default
+
+			}
+
+			res.send(obj);
+		})
+		.catch(function(error) {
+			console.log('There was an ERROR: ', error);
+		});
+
+
+});
+
+/*
+app.get('/:id', (req,res) => {
+
+	let id = req.params.id;
+
+	P.getPokemonByName(id) // with Promise
+		.then(function(response) {
+
+			const obj = {
+				name: response.name,
+				id: response.id,
+				moves: response.moves[0].move.name,
+				stats_back: response.sprites.back_default,
+				stats_front: response.sprites.front_default
+			}
+
+			res.send(obj);
+		})
+		.catch(function(error) {
+			console.log('There was an ERROR: ', error);
+		});
+
+
+});
+
+*/
+
 
 
 app.listen(3000, () => {
