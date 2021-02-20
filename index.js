@@ -72,7 +72,6 @@ app.get('/:id', (req,res) => {
 */
 
 
-// ENDPOINT PARA POKEMON RANDOM
 app.get('/random', (req,res,next) => {
 
 	const ran = random.int(min=1,max=898);
