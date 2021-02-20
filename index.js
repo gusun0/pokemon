@@ -103,7 +103,7 @@ app.get('/random', (req,res,next) => {
 
 
 
-
+// ESTA PARTE DEL CODIGO ES PARA LISTAR POKEMONS EN UN RANGO
 app.post('/lista', (req,res) => {
 
 	let { inicio, fin } = req.body;
