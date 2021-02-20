@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // recuperar los datos del 
 app.use(bodyParser.json());
 
 
-app.get('/random', (req,res,next) => {
+app.get('/random', (req,res) => {
 
 	const ran = random.int(min=1,max=898);
 
@@ -37,7 +37,6 @@ app.get('/random', (req,res,next) => {
 			}
 
 			res.send(obj);
-			next();
 		})
 		.catch(function(error) {
 			console.log('There was an ERROR: ', error);
